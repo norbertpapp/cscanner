@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2019-03-28</lastmod>
+     <lastmod>2019-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,13 +13,13 @@
         
     <url>
      <loc>None/rules/firewall/</loc>
-     <lastmod>2019-03-28</lastmod>
+     <lastmod>2019-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rules/s3/</loc>
-     <lastmod>2019-03-28</lastmod>
+     <lastmod>2019-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -29,13 +29,13 @@
         
     <url>
      <loc>None/clouds/aws/</loc>
-     <lastmod>2019-03-28</lastmod>
+     <lastmod>2019-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/clouds/exoscale/</loc>
-     <lastmod>2019-03-28</lastmod>
+     <lastmod>2019-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
