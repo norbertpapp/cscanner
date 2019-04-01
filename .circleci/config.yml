@@ -1,0 +1,12 @@
+---
+version: 2
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+    - build-branch:
+        filters:
+          branches:
+            ignore: gh-pages
+          tags:
+            ignore: /.*/
