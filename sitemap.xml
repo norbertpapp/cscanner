@@ -6,6 +6,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://cscanner.io/downloads/</loc>
+     <lastmod>2019-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://cscanner.io/clouds/aws/</loc>
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>

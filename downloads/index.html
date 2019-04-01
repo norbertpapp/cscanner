@@ -7,33 +7,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../../img/favicon.png">
+  <link rel="shortcut icon" href="../img/favicon.png">
   
-  <title>Amazon Web Services - CScanner: A Cloud Security Scanner</title>
+  <title>Downloads - CScanner: A Cloud Security Scanner</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="../css/custom.css" rel="stylesheet">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Amazon Web Services";
-    var mkdocs_page_input_path = "clouds/aws.md";
-    var mkdocs_page_url = "/clouds/aws/";
+    var mkdocs_page_name = "Downloads";
+    var mkdocs_page_input_path = "downloads.md";
+    var mkdocs_page_url = "/downloads/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="CScanner: A Cloud Security Scanner" />
-<meta property="og:title" content="Amazon Web Services"/>
+<meta property="og:title" content="Downloads"/>
 <meta property="og:image" content="https://cscanner.ioimg/opengraph.png" />
-<meta property="og:url" content="https://cscanner.io/clouds/aws/" />
+<meta property="og:url" content="https://cscanner.io/downloads/" />
 <meta property="og:description" content="CScanner scans your cloud accounts for potential security problems." />
 
 <link rel="apple-touch-icon-precomposed" href="https://cscanner.ioimg/tileicon.png" />
@@ -59,9 +59,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> CScanner: A Cloud Security Scanner</a>
+        <a href=".." class="icon icon-home"> CScanner: A Cloud Security Scanner</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -73,37 +73,39 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../..">Home</a>
+    <a class="" href="..">Home</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../../downloads/">Downloads</a>
+    <a class="current" href="./">Downloads</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#downloads">Downloads</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#latest-version">Latest version</a></li>
+        
+            <li><a class="toctree-l3" href="#source-code">Source code</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
     <span class="caption-text">Cloud providers</span>
     <ul class="subnav">
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Amazon Web Services</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#amazon-web-services">Amazon Web Services</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#rules">Rules</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../clouds/aws/">Amazon Web Services</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../exoscale/">Exoscale</a>
+    <a class="" href="../clouds/exoscale/">Exoscale</a>
                 </li>
     </ul>
 	    </li>
@@ -114,11 +116,11 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../rules/firewall/">Firewall</a>
+    <a class="" href="../rules/firewall/">Firewall</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../rules/s3/">S3</a>
+    <a class="" href="../rules/s3/">S3</a>
                 </li>
     </ul>
 	    </li>
@@ -129,15 +131,15 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../development/">Contributing to CScanner</a>
+    <a class="" href="../development/">Contributing to CScanner</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../development/provider/">Writing a Provider</a>
+    <a class="" href="../development/provider/">Writing a Provider</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../development/rule/">Writing a Rule</a>
+    <a class="" href="../development/rule/">Writing a Rule</a>
                 </li>
     </ul>
 	    </li>
@@ -152,7 +154,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">CScanner: A Cloud Security Scanner</a>
+        <a href="..">CScanner: A Cloud Security Scanner</a>
       </nav>
 
       
@@ -160,18 +162,14 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
+    <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Cloud providers &raquo;</li>
-        
-      
     
-    <li>Amazon Web Services</li>
+    <li>Downloads</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/janoszen/cscanner/edit/master/docs/clouds/aws.md"
+        <a href="https://github.com/janoszen/cscanner/edit/master/docs/downloads.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -181,25 +179,11 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="amazon-web-services">Amazon Web Services</h1>
-<p><a href="https://aws.amazon.com">Amazon Web Services</a>, or AWS, is a popular cloud provider and is supported by cscanner.
-The configuration does as follows:</p>
-<pre><code class="yaml">connection-name:
-  type: aws
-  accessKeyId: &quot;&quot;
-  secretAccessKey: &quot;&quot;
-  sessionToken: &quot;&quot;
-  profile: &quot;&quot;
-</code></pre>
-
-<p>Each of the parameters is optional. If they are not provided, the default is to fall back to the AWS client default
-behavior, such as reading options from environment variables or credentials files.</p>
-<h2 id="rules">Rules</h2>
-<p>The AWS provider currently supports the following rules:</p>
-<ul>
-<li><a href="../../rules/firewall/">Firewall</a></li>
-<li><a href="../../rules/s3/">S3</a></li>
-</ul>
+                <h1 id="downloads">Downloads</h1>
+<h2 id="latest-version">Latest version</h2>
+<p>CScanner is delivered as a single JAR file to run. You can <a href="https://github.com/janoszen/cscanner/releases">grab the latest release from GitHub releases</a>.</p>
+<h2 id="source-code">Source code</h2>
+<p>The source code is available <a href="https://github.com/janoszen/cscanner">via git from GitHub</a>.</p>
               
             </div>
           </div>
@@ -207,10 +191,10 @@ behavior, such as reading options from environment variables or credentials file
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exoscale/" class="btn btn-neutral float-right" title="Exoscale">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../clouds/aws/" class="btn btn-neutral float-right" title="Amazon Web Services">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../downloads/" class="btn btn-neutral" title="Downloads"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -238,16 +222,16 @@ behavior, such as reading options from environment variables or credentials file
           <a href="https://github.com/janoszen/cscanner/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../downloads/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../exoscale/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../clouds/aws/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>
