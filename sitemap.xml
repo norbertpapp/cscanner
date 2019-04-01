@@ -1,44 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>/</loc>
+     <loc>https://cscanner.io/</loc>
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/clouds/aws/</loc>
+     <loc>https://cscanner.io/clouds/aws/</loc>
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/clouds/exoscale/</loc>
+     <loc>https://cscanner.io/clouds/exoscale/</loc>
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/rules/firewall/</loc>
+     <loc>https://cscanner.io/rules/firewall/</loc>
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/rules/s3/</loc>
+     <loc>https://cscanner.io/rules/s3/</loc>
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
 </urlset>
