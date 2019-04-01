@@ -9,7 +9,7 @@
   
   <link rel="shortcut icon" href="../../img/favicon.png">
   
-  <title>Writing a Rule - CScanner: A Cloud Security Scanner</title>
+  <title>Writing a Provider - CScanner: A Cloud Security Scanner</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Writing a Rule";
-    var mkdocs_page_input_path = "dev/rule.md";
-    var mkdocs_page_url = "/dev/rule/";
+    var mkdocs_page_name = "Writing a Provider";
+    var mkdocs_page_input_path = "development/provider.md";
+    var mkdocs_page_url = "/development/provider/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -31,9 +31,9 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="CScanner: A Cloud Security Scanner" />
-<meta property="og:title" content="Writing a Rule"/>
+<meta property="og:title" content="Writing a Provider"/>
 <meta property="og:image" content="https://cscanner.ioimg/opengraph.png" />
-<meta property="og:url" content="https://cscanner.io/dev/rule/" />
+<meta property="og:url" content="https://cscanner.io/development/provider/" />
 <meta property="og:description" content="CScanner scans your cloud accounts for potential security problems." />
 
 <link rel="apple-touch-icon-precomposed" href="https://cscanner.ioimg/tileicon.png" />
@@ -112,26 +112,22 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../dev/">Contributing to CScanner</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../provider/">Writing a Provider</a>
+    <a class="" href="../">Contributing to CScanner</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Writing a Rule</a>
+    <a class="current" href="./">Writing a Provider</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#writing-a-rule">Writing a Rule</a></li>
+    <li class="toctree-l3"><a href="#writing-a-provider">Writing a Provider</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#writing-a-rule-class">Writing a rule class</a></li>
+            <li><a class="toctree-l4" href="#the-configuration-class">The configuration class</a></li>
         
-            <li><a class="toctree-l4" href="#writing-a-connection-interface">Writing a connection interface</a></li>
+            <li><a class="toctree-l4" href="#the-connection-class">The connection class</a></li>
         
-            <li><a class="toctree-l4" href="#writing-a-rule-builder">Writing a rule builder</a></li>
+            <li><a class="toctree-l4" href="#reading-the-configuration">Reading the configuration</a></li>
         
             <li><a class="toctree-l4" href="#writing-a-plugin">Writing a plugin</a></li>
         
@@ -139,6 +135,10 @@
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../rule/">Writing a Rule</a>
                 </li>
     </ul>
 	    </li>
@@ -169,10 +169,10 @@
         
       
     
-    <li>Writing a Rule</li>
+    <li>Writing a Provider</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/janoszen/cscanner/edit/master/docs/dev/rule.md"
+        <a href="https://github.com/janoszen/cscanner/edit/master/docs/development/provider.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -182,81 +182,104 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="writing-a-rule">Writing a Rule</h1>
+                <h1 id="writing-a-provider">Writing a Provider</h1>
 <div class="admonition warning">
 <p class="admonition-title">The API may change!</p>
 <p>CScanner is a very young project and the internal API has not yet stabilized. It is recommended that you contact
 the author before starting to write a rule or provider to coordinate efforts.</p>
 </div>
-<p>Writing a rule is a lot less well described than writing a provider as each rule has its very own implementation. For
-this example we will stick with an S3 implementation for various cloud providers.</p>
-<h2 id="writing-a-rule-class">Writing a rule class</h2>
-<p>First of all, we are going to write our actual rule class:</p>
-<pre><code class="java">public class MyS3Rule implements Rule&lt;S3Connection&gt; {
-    public final static String RULE = &quot;S3_MY_RULE&quot;;
-    //This is a parameter that comes from the configuration
-    private final boolean scanContents;
+<p>Integrating a new provider is quite a challenging task as you will need to decide which rules you want to support. First
+off you start with your provider class:</p>
+<pre><code class="java">public class YourCloudProvider implements CloudProvider&lt;YourConfiguration, YourConnection&gt; {
 
-    public MyS3Rule(
-        boolean scanContents
+}
+</code></pre>
+
+<p>Additionally, you will want to look into each of the rules what additional classes you can <code>implement</code>, such as
+<code>S3CloudProvider&lt;YourConfiguration, YourConnection&gt;</code> or <code>FirewallCloudProvider&lt;YourConfiguration, YourConnection&gt;</code>.
+These interfaces are used when walking through the cloud accounts to determine which cloud supports which rules.</p>
+<h2 id="the-configuration-class">The configuration class</h2>
+<p>Next up, you will need to write your configuration class:</p>
+<pre><code class="java">public class YourConfiguration {
+    @Nullable
+    public final String key;
+    @Nullable
+    public final String secret;
+
+    public YourConfiguration(
+        @Nullable String key,
+        @Nullable String secret
     ) {
-        this.scanContents = scanContents;
-    }
-
-    @Override
-    public List&lt;RuleResult&gt; evaluate(S3Connection s3Connection) {
-        //Evaluate rules here and respond with a list of results. These results contain resources and their compliancy
-        //status.        
+        this.key = key;
+        this.secret = secret;
     }
 }
 </code></pre>
 
-<h2 id="writing-a-connection-interface">Writing a connection interface</h2>
-<p>Now, if you look at this class you can see that it needs an <code>S3Connection</code>. This is an interface that will let you 
-retrieve the actual S3 client.</p>
-<pre><code class="java">public interface S3Connection extends CloudProviderConnection {
-    AmazonS3 getS3Client();
+<p>This is very plain and simple and only serves to store the configuration relevant to your cloud provider. This
+configuration class will be filled in your cloud provider class later.</p>
+<h2 id="the-connection-class">The connection class</h2>
+<p>The third thing you need to create is a connection class like so:</p>
+<pre><code class="java">public class YourConnection implements CloudProviderConnection {
+    private final String name;
+    private final YourConfiguration configuration;
+
+    public YourConnection(
+        String name,
+        YourConfiguration configuration
+    ) {
+        this.name = name;
+
+        this.configuration = configuration;
+    }
+
+    @Override
+    public String getConnectionName() {
+        return name;
+    }
 }
 </code></pre>
 
-<p>This connection will be injected to the evaluate call for each connection that needs to be checked. Keep in mind though
-that some implementations may be more complicated as the cloud resource may be, for example, bound to a region that
-you need to handle.</p>
-<h2 id="writing-a-rule-builder">Writing a rule builder</h2>
-<p>In order for the system to be able to construct the rule with the appropriate parameters, you will also need a 
-rule builder like so:</p>
-<pre><code class="java">public class MyS3RuleBuilder implements RuleBuilder&lt;S3PublicReadProhibitedRule, S3Connection&gt; {
+<p>Based on what your cloud provider will support, you will need to implement additional classes, such as <code>S3Connection</code>
+and you will need to implement the methods relevant to that interface too, such as returning an S3 client based on
+your configuration.</p>
+<h2 id="reading-the-configuration">Reading the configuration</h2>
+<p>Now we have reached the point to implement some functions in our cloud provider class, most importantly reading
+the configuration.</p>
+<p>You will receive the configuration for your provider as a <code>Map&lt;String, Object&gt;</code>. Keep in mind that the configuration
+comes from a YAML, JSON, etc file so it is your responsibility to vet the content and make sure you have the
+correct data types.</p>
+<p>For example</p>
+<pre><code class="java">public class YourCloudProvider implements CloudProvider&lt;YourConfiguration, YourConnection&gt; {
     @Override
-    public String getType() {
-        return S3PublicReadProhibitedRule.RULE;
-    }
+    public YourConnection getConnection(
+        String name,
+        Map&lt;String, Object&gt; configuration
+    ) {
+        YourConfiguration configObject = new YourConfiguration(
+            (String) configuration.getOrDefault(&quot;key&quot;, null),
+            (String) configuration.getOrDefault(&quot;secret&quot;, null)
+        );
 
-    @Override
-    public Class&lt;S3Connection&gt; getConnectionType() {
-        return S3Connection.class;
-    }
-
-    @Override
-    public MyS3Rule create(Map&lt;String, Object&gt; options) {
-        //return the configured rule here.
+        return new YourConnection(name, configObject);
     }
 }
 </code></pre>
 
 <h2 id="writing-a-plugin">Writing a plugin</h2>
-<p>Finally you will need to write a plugin to load the rule. This is quite simple:</p>
-<pre><code class="java">public class MyS3Plugin implements Plugin {
+<p>Finally, you will need to write a plugin. This is quite simple:</p>
+<pre><code class="java">@ParametersAreNonnullByDefault
+public class YourPlugin implements Plugin {
     @Override
-    public List&lt;RuleBuilder&lt;?, ?&gt;&gt; getSupportedRules() {
-        //noinspection unchecked
+    public List&lt;CloudProvider&lt;?, ?&gt;&gt; getCloudProviders() {
         return Arrays.asList(
-            new MyS3RuleBuilder()
+            new YourCloudProvider()
         );
     }
 }
 </code></pre>
 
-<p>The plugin will need to be added to the CLI module as there is no automatic plugin discovery at this time.</p>
+<p>You will need to add this client to the <code>cli</code> module as at this time there is no automatic plugin discovery.</p>
               
             </div>
           </div>
@@ -264,8 +287,10 @@ rule builder like so:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../rule/" class="btn btn-neutral float-right" title="Writing a Rule">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../provider/" class="btn btn-neutral" title="Writing a Provider"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../" class="btn btn-neutral" title="Contributing to CScanner"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -293,8 +318,10 @@ rule builder like so:</p>
           <a href="https://github.com/janoszen/cscanner/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../provider/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../rule/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

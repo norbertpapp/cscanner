@@ -26,17 +26,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://cscanner.io/dev/dev/</loc>
+     <loc>https://cscanner.io/development/</loc>
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://cscanner.io/dev/provider/</loc>
+     <loc>https://cscanner.io/development/provider/</loc>
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://cscanner.io/dev/rule/</loc>
+     <loc>https://cscanner.io/development/rule/</loc>
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
