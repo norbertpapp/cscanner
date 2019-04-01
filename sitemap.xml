@@ -25,4 +25,19 @@
      <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    <url>
+     <loc>https://cscanner.io/dev/dev/</loc>
+     <lastmod>2019-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://cscanner.io/dev/provider/</loc>
+     <lastmod>2019-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://cscanner.io/dev/rule/</loc>
+     <lastmod>2019-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>

@@ -118,6 +118,25 @@
     </ul>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Development</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../dev/dev/">Contributing to CScanner</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dev/provider/">Writing a Provider</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dev/rule/">Writing a Rule</a>
+                </li>
+    </ul>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -174,7 +193,7 @@ it implements a CloudStack-like API.</p>
 <li><a href="../../rules/firewall/">Firewall</a></li>
 <li><a href="../../rules/s3/">S3</a></li>
 </ul>
-<div class="admonition note">
+<div class="admonition warning">
 <p class="admonition-title">Exoscale SOS/S3 compatibility</p>
 <p>Exoscale SOS does not support bucket ACLs, so you need to set <code>scanContents</code> to <code>true</code> on the
 <code>S3_PUBLIC_READ_PROHIBITED</code> rule to take effect. Otherwise this rule will do nothing.</p>
