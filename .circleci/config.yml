@@ -1,6 +1,6 @@
 ---
 version: 2
-jobs:
+jobs: {}
 workflows:
   version: 2
   build-and-deploy:
