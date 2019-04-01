@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Exoscale - Janos' Cloud Scanner</title>
+  <title>Exoscale - CScanner: A Cloud Security Scanner</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -35,7 +35,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> Janos' Cloud Scanner</a>
+        <a href="../.." class="icon icon-home"> CScanner: A Cloud Security Scanner</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -104,7 +104,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">Janos' Cloud Scanner</a>
+        <a href="../..">CScanner: A Cloud Security Scanner</a>
       </nav>
 
       
@@ -150,6 +150,11 @@ it implements a CloudStack-like API.</p>
 <li><a href="../../rules/firewall/">Firewall</a></li>
 <li><a href="../../rules/s3/">S3</a></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Exoscale SOS/S3 compatibility</p>
+<p>Exoscale SOS does not support bucket ACLs, so you need to set <code>scanContents</code> to <code>true</code> on the
+<code>S3_PUBLIC_READ_PROHIBITED</code> rule to take effect. Otherwise this rule will do nothing.</p>
+</div>
               
             </div>
           </div>
