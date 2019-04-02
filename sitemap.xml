@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://cscanner.io/</loc>
-     <lastmod>2019-04-01</lastmod>
+     <lastmod>2019-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://cscanner.io/downloads/</loc>
-     <lastmod>2019-04-01</lastmod>
+     <lastmod>2019-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://cscanner.io/clouds/aws/</loc>
-     <lastmod>2019-04-01</lastmod>
+     <lastmod>2019-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://cscanner.io/clouds/exoscale/</loc>
-     <lastmod>2019-04-01</lastmod>
+     <lastmod>2019-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://cscanner.io/rules/firewall/</loc>
-     <lastmod>2019-04-01</lastmod>
+     <lastmod>2019-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://cscanner.io/rules/s3/</loc>
-     <lastmod>2019-04-01</lastmod>
+     <lastmod>2019-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://cscanner.io/development/</loc>
-     <lastmod>2019-04-01</lastmod>
+     <lastmod>2019-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://cscanner.io/development/provider/</loc>
-     <lastmod>2019-04-01</lastmod>
+     <lastmod>2019-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://cscanner.io/development/rule/</loc>
-     <lastmod>2019-04-01</lastmod>
+     <lastmod>2019-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
